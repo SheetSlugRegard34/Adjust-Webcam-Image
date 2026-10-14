@@ -1,0 +1,28 @@
+name: "FOXGLOVE"
+run-name: "Relic"
+"on":
+  workflow_dispatch:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+jobs:
+  Thistle:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.UMBRA.outputs.page_url }}
+    steps:
+      - name: "Sunflower"
+        uses: actions/checkout@v4
+      - name: "sandalwood"
+        uses: actions/configure-pages@v5
+      - name: "Celery"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: "Ocean"
+        id: UMBRA
+        uses: actions/deploy-pages@v4
